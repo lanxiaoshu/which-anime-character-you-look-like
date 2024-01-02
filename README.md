@@ -6,12 +6,11 @@
 
 运行`run.py`后弹出游戏界面，提示上传图片
 
-![Image text](https://gitee.com/lanxiaoshu/guess-which-anime-character-you-look-like/blob/master/img/0.png)
-
+![img](/img/0.png)
 
 上传一张动漫图，开始预测
 
-![Image text](https://gitee.com/lanxiaoshu/guess-which-anime-character-you-look-like/blob/master/img/1.png)
+![img](/img/1.png)
 
 可以看到，给出认为图片中是哪一位动漫人物的结果和相应概率。
 
