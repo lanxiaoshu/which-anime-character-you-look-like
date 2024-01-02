@@ -29,13 +29,13 @@ graph LR;
 
 - `requirements.txt`指明了本项目所需的所有库；
 
-- `MaskPic.py`完成图片处理操作，具体为对原始图片进行抠图；
-
 - `SplitPic.py`完成数据的划分操作，划分出测试集、测试集和验证集；
 
 - `Train.py`完成模型训练操作，具体使用YOLOv8模型；
 
 - `best.pt`是训练完成模型的权重文件；
+
+- `MaskPic.py`完成图片处理操作，对原始图片进行抠图，不需要单独运行；
 
 - `run.py`是实现了可以交互的GUI，用户可以通过此参与游戏--测测你像哪位动漫角色？
 
@@ -76,8 +76,6 @@ icartoonface_rectrain
 pip install -r requirements.txt
 ```
 
-运行`MaskPic.py`，抠图完成的图像将存储在`dataset_cold`文件夹中。抠图完成后，需人为检查，删除文件夹中的不合理图片。
-
 运行`SplitPic.py`进行数据集的划分。
 
  ## 模型训练
@@ -109,6 +107,8 @@ graph TD;
 ## 模型测试
 
 训练完成的模型的权重文件为`best.pt`，通过 `run.py` 进行模型的测试。
+
+（需注意 `run.py` 要依赖 `MaskPic.py` 进行图像的抠图，抠图完成的图像将生成为同一目录的`img_cold.jpg`文件。）
 
 ```python
 model = YOLO('best.pt')
