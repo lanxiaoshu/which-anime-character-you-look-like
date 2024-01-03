@@ -29,6 +29,8 @@ graph LR;
 
 - `requirements.txt`指明了本项目所需的所有库；
 
+- `convert.py`用于将所选数据集的数据标签转换为代码使用的格式；
+
 - `SplitPic.py`完成数据的划分操作，划分出测试集、测试集和验证集；
 
 - `Train.py`完成模型训练操作，具体使用YOLOv8模型；
@@ -64,7 +66,7 @@ icartoonface_rectrain
 {'id': 'personai_icartoonface_rectrain_00009', 'name': '假面骑士王蛇', 'url': 'http://baike.baidu.com/view/2632485.htm'}
 ...
 ```
-在本项目中我们只使用`id`和`name`两个标签，将其转换为
+在本项目中我们只使用`id`和`name`两个标签，用`convert.py`将其转换为
 
 ```name_dict = {0: '超梦', 1: '文斯莫克·尼治', 2: '莱德', 4: '布鲁奥特曼', 5: '罗索奥特曼', 6: '松坂梅', 7: '石井健太郎', 8: '李莓铃', 9: '假面骑士王蛇', 10: '水户郁魅'...}```  
 
@@ -111,11 +113,11 @@ graph TD;
 
 训练完成的模型的权重文件为`best.pt`，通过 `run.py` 进行模型的测试。
 
-`run.py`先进行图像的抠图，抠图完成的图像将生成为同一目录的`img_cold.jpg`文件，然后进行模型的预测。
-
 ```python
 model = YOLO('best.pt')
 ```
+
+`run.py`检测到人物时会先进行图像抠图，抠图完成的图像将生成为同一目录的`img_cold.jpg`文件，然后进行模型的预测。
 
 之后就可以在GUI上玩游戏啦！
 
