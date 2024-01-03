@@ -64,6 +64,11 @@ icartoonface_rectrain
 {'id': 'personai_icartoonface_rectrain_00009', 'name': '假面骑士王蛇', 'url': 'http://baike.baidu.com/view/2632485.htm'}
 ...
 ```
+在本项目中我们只使用`id`和`name`两个标签，将其转换为
+
+```name_dict = {0: '超梦', 1: '文斯莫克·尼治', 2: '莱德', 4: '布鲁奥特曼', 5: '罗索奥特曼', 6: '松坂梅', 7: '石井健太郎', 8: '李莓铃', 9: '假面骑士王蛇', 10: '水户郁魅'...}```  
+
+的格式，放在`code.py`的相应位置。
 
 
 ## 图片处理
@@ -113,6 +118,8 @@ model = YOLO('best.pt')
 ```
 
 之后就可以在GUI上玩游戏啦！
+
+# 
 
 # 写在最后
 
